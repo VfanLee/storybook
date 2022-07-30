@@ -13,7 +13,7 @@ const Template = (args, { argTypes }) => ({
 
 export const Attributes = Template.bind({})
 
-export const 基础用法 = (args, { argTypes }) => ({
+export const 二次封装示例 = (args, { argTypes }) => ({
   components: { UlButton },
   template: `
   <div>
