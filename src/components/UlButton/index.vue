@@ -1,80 +1,23 @@
 <template>
-  <el-button
-    :size="size"
-    :type="type"
-    :plain="plain"
-    :round="round"
-    :circle="circle"
-    :loading="loading"
-    :disabled="disabled"
-    :icon="icon"
-    :autofocus="autofocus"
-    :native-type="nativeType"
-    @click="handleClick"
-  >
-    <slot>{{ label }}</slot>
-  </el-button>
+  <button :class="classes" :size="size" :type="type" :disabled="disabled" @click="handleClick">
+    <slot></slot>
+  </button>
 </template>
 
 <script>
 export default {
   name: 'UlButton',
   props: {
-    /** 尺寸 */
-    size: {
-      type: String,
-      validator: function (value) {
-        return ['medium', 'small', 'mini'].indexOf(value) !== -1
-      }
-    },
-    /** 类型 */
     type: {
-      type: String,
-      validator: function (value) {
-        return ['primary', 'success', 'warning', 'danger', 'info', 'text'].indexOf(value) !== -1
-      }
-    },
-    /** 是否朴素按钮 */
-    plain: {
-      type: Boolean,
-      default: false
-    },
-    /** 是否圆角按钮 */
-    round: {
-      type: Boolean,
-      default: false
-    },
-    /** 是否圆形按钮 */
-    circle: {
-      type: Boolean,
-      default: false
-    },
-    /** 是否加载中状态 */
-    loading: {
-      type: Boolean,
-      default: false
-    },
-    /** 是否禁用状态 */
-    disabled: {
-      type: Boolean,
-      default: false
-    },
-    /** 图标类名 */
-    icon: {
       type: String
     },
-    /** 是否默认聚焦 */
-    autofocus: {
-      type: Boolean,
-      default: false
-    },
-    /** 原生 type 属性 */
-    nativeType: {
-      type: String,
-      default: 'botton',
-      validator: function (value) {
-        return ['button', 'submit', 'reset'].indexOf(value) !== -1
-      }
+    size: {
+      type: String
+    }
+  },
+  computed: {
+    classes() {
+      return ['ul-btn', this.type ? 'ul-btn--' + this.type : '', this.size ? 'ul-btn--' + this.size : '']
     }
   },
   methods: {
@@ -86,16 +29,72 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.u-button {
-  display: inline-block;
-  padding: 11px 20px;
-  border: 0;
-  border-radius: 3em;
-  background-color: transparent;
+.ul-btn {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
   color: #333;
-  font-weight: 700;
-  line-height: 1;
+  font-size: 14px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border-radius: 4px;
   cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+}
+
+.ul-btn--primary {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+
+.ul-btn--success {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
+.ul-btn--warning {
+  color: #fff;
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+
+.ul-btn--danger {
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+
+.ul-btn--info {
+  color: #fff;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+
+.ul-btn--link {
+  font-weight: 400;
+  color: #337ab7;
+  border-color: transparent;
+  border-radius: 0;
+}
+
+.ul-btn--large {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+
+.ul-btn--small {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+
+.ul-btn--mini {
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
 }
 </style>

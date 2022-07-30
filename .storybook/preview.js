@@ -4,7 +4,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 Vue.use(ElementUI)
 
 export const parameters = {
-  actions: { argTypesRegex: '^[A-Z].*' },
+  actions: { argTypesRegex: '^[a-z].*' },
   controls: {
     matchers: {
       color: /(background|color)$/i,

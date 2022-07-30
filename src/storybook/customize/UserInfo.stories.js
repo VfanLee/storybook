@@ -2,7 +2,12 @@ import UserInfo from '../../components/UserInfo'
 
 export default {
   title: 'Customize/UserInfo',
-  component: UserInfo
+  component: UserInfo,
+  argTypes: {
+    imgUrl: { description: '头像地址' },
+    name: { description: '名字' },
+    email: { description: '邮箱' }
+  }
 }
 
 const Template = (args, { argTypes }) => ({

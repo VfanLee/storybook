@@ -14,15 +14,12 @@
 export default {
   name: 'UserInfo',
   props: {
-    /** 图片地址 */
     imgUrl: {
       type: String
     },
-    /** 名称 */
     name: {
       type: String
     },
-    /** 邮箱 */
     email: {
       type: String
     }

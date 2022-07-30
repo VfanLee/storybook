@@ -16,8 +16,5 @@ export const 基础用法 = (args, { argTypes }) => ({
       email: 'liyuanfan@ulearning.com'
     }"
   ></user-select>
-  `,
-  methods: {
-  }
+  `
 })
-

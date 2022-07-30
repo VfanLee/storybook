@@ -2,7 +2,12 @@ import UHeader from '../../components/UHeader'
 
 export default {
   title: 'Customize/UHeader',
-  component: UHeader
+  component: UHeader,
+  argTypes: {
+    title: { description: '标题' },
+    description: { description: '描述信息' },
+    actions: { description: '操作区域' }
+  }
 }
 
 const Template = (args, { argTypes }) => ({
@@ -11,7 +16,7 @@ const Template = (args, { argTypes }) => ({
   template: `
   <u-header v-bind="$props">
     <template #description>
-      <p>hello ulearning</p>
+      <p>hello world!</p>
     </template>
     <template #actions>
       <button>Give me five</button>
