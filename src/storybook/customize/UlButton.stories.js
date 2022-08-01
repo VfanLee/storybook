@@ -13,18 +13,14 @@ export default {
       description: '尺寸',
       control: { type: 'radio' },
       options: ['large', 'small', 'mini']
-    },
-    click: {
-      description: '自定义点击事件'
-    },
-    default: { description: '按钮内容' }
+    }
   }
 }
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { UlButton },
-  template: '<ul-button v-bind="$props" @click="handleClick">Button</ul-button>'
+  template: '<ul-button v-bind="$props">Button</ul-button>'
 })
 export const Attributes = Template.bind({})
 
