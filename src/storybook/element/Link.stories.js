@@ -1,5 +1,30 @@
 export default {
-  title: 'Element/ElLink'
+  title: 'Element/Link',
+  argTypes: {
+    type: {
+      control: { type: 'select' },
+      options: ['primary', 'success', 'warning', 'danger', 'info'],
+      description: '类型'
+    },
+    underline: {
+      control: { type: 'boolean' },
+      defaultValue: true,
+      description: '是否下划线'
+    },
+    disabled: {
+      control: { type: 'boolean' },
+      defaultValue: false,
+      description: '是否禁用'
+    },
+    href: {
+      control: { type: 'text' },
+      description: '原生href属性'
+    },
+    icon: {
+      control: { type: 'text' },
+      description: '图标类名'
+    }
+  }
 }
 
 const Template = (args, { argTypes }) => ({
@@ -8,13 +33,6 @@ const Template = (args, { argTypes }) => ({
 })
 
 export const Attributes = Template.bind({})
-Attributes.args = {
-  type: '',
-  underline: true,
-  disabled: false,
-  href: '',
-  icon: ''
-}
 
 export const 基础用法 = (args, { argTypes }) => ({
   template: `

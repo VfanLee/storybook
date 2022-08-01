@@ -1,22 +1,38 @@
 export default {
-  title: 'Element/Radio'
+  title: 'Element/Radio',
+  argTypes: {
+    value: {
+      control: { type: 'text' },
+      description: '绑定值'
+    },
+    label: {
+      control: { type: 'text' },
+      description: 'Radio 的 value'
+    },
+    disabled: {
+      control: { type: 'boolean' },
+      defaultValue: false,
+      description: '是否禁用'
+    },
+    border: {
+      control: { type: 'boolean' },
+      defaultValue: false,
+      description: '是否显示边框'
+    },
+    size: {
+      control: { type: 'radio' },
+      options: ['medium', 'small', 'mini'],
+      description: '类型'
+    },
+    name: {
+      description: '原生 name 属性'
+    }
+  }
 }
 
-const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  template: `<el-radio v-bind="$props">备选项</el-radio>`
-})
+const Template = (args, { argTypes }) => ({})
 
 export const Attributes = Template.bind({})
-Attributes.args = {
-  value: '',
-  label: '',
-  disabled: false,
-  border: false,
-  circle: false,
-  size: false,
-  name: false
-}
 
 export const 基础用法 = (args, { argTypes }) => ({
   template: `

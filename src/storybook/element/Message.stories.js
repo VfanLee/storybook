@@ -1,5 +1,5 @@
 export default {
-  title: 'Element/ElMessage'
+  title: 'Element/Message'
 }
 
 export const Attributes = (args, { argTypes }) => ({
