@@ -1,35 +1,65 @@
 export default {
-  title: 'Element/Button'
+  title: 'Element/Button',
+  argTypes: {
+    size: {
+      control: { type: 'radio' },
+      options: ['medium', 'small', 'mini'],
+      description: '尺寸'
+    },
+    type: {
+      control: { type: 'select' },
+      options: ['primary', 'success', 'warning', 'danger', 'info', 'text'],
+      description: '类型'
+    },
+    plain: {
+      control: 'boolean',
+      defaultValue: false,
+      description: '是否朴素按钮'
+    },
+    round: {
+      control: 'boolean',
+      defaultValue: false,
+      description: '是否圆角按钮'
+    },
+    circle: {
+      control: 'boolean',
+      defaultValue: false,
+      description: '是否圆形按钮'
+    },
+    loading: {
+      control: 'boolean',
+      defaultValue: false,
+      description: '是否加载中状态'
+    },
+    disabled: {
+      control: 'boolean',
+      defaultValue: false,
+      description: '是否禁用状态'
+    },
+    icon: {
+      control: 'text',
+      description: '图标类名'
+    },
+    autofocus: {
+      control: 'boolean',
+      defaultValue: false,
+      description: '是否默认聚焦'
+    },
+    'native-type': {
+      control: 'radio',
+      options: ['button', 'submit', 'reset'],
+      defaultValue: 'button',
+      description: '原生 type 属性'
+    }
+  }
 }
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  template: '<el-button v-bind="$props">Button</el-button>',
-  argTypes: {
-    size: {
-      control: { type: 'radio' },
-      options: ['medium', 'small', 'mini']
-    },
-    type: {
-      control: { type: 'select' },
-      options: ['primary', 'success', 'warning', 'danger', 'info', 'text']
-    }
-  }
+  template: '<el-button v-bind="$props">Button</el-button>'
 })
 
 export const Attributes = Template.bind({})
-Attributes.args = {
-  size: '',
-  type: '',
-  plain: false,
-  round: false,
-  circle: false,
-  loading: false,
-  disabled: false,
-  icon: '',
-  autofocus: false,
-  nativeType: 'button'
-}
 
 export const 基础用法 = (args, { argTypes }) => ({
   template: `
