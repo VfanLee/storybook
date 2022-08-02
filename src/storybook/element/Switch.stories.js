@@ -60,14 +60,19 @@ export default {
       defaultValue: true,
       description: '改变 switch 状态时是否触发表单的校验'
     }
+  },
+  parameters: {
+    docs: {
+      description: {
+        component: '表示两种相互对立的状态间的切换，多用于触发「开/关」。'
+      }
+    }
   }
 }
 
-const Template = (args, { argTypes }) => ({})
+export const Attitudes = () => ({})
 
-export const Attributes = Template.bind({})
-
-export const 基础用法 = (args, { argTypes }) => ({
+export const 基础用法 = () => ({
   template: `
   <el-switch
     v-model="value"
@@ -82,7 +87,7 @@ export const 基础用法 = (args, { argTypes }) => ({
   }
 })
 
-export const 文字描述 = (args, { argTypes }) => ({
+export const 文字描述 = () => ({
   template: `
   <div>
     <el-switch
@@ -108,7 +113,7 @@ export const 文字描述 = (args, { argTypes }) => ({
   }
 })
 
-export const 扩展的value类型 = (args, { argTypes }) => ({
+export const 扩展的value类型 = () => ({
   template: `
   <el-tooltip :content="'Switch value: ' + value" placement="top">
     <el-switch
@@ -127,7 +132,7 @@ export const 扩展的value类型 = (args, { argTypes }) => ({
   }
 })
 
-export const 禁用状态 = (args, { argTypes }) => ({
+export const 禁用状态 = () => ({
   template: `
   <div>
     <el-switch

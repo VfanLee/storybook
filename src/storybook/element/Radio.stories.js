@@ -27,14 +27,19 @@ export default {
     name: {
       description: '原生 name 属性'
     }
+  },
+  parameters: {
+    docs: {
+      description: {
+        component: '在一组备选项中进行单选'
+      }
+    }
   }
 }
 
-const Template = (args, { argTypes }) => ({})
+export const Attitudes = () => ({})
 
-export const Attributes = Template.bind({})
-
-export const 基础用法 = (args, { argTypes }) => ({
+export const 基础用法 = () => ({
   template: `
   <div>
     <el-radio v-model="radio" label="1">备选项</el-radio>
@@ -47,8 +52,13 @@ export const 基础用法 = (args, { argTypes }) => ({
     }
   }
 })
+基础用法.parameters = {
+  docs: {
+    story: '由于选项默认可见，不宜过多，若选项过多，建议使用 Select 选择器。'
+  }
+}
 
-export const 禁用状态 = (args, { argTypes }) => ({
+export const 禁用状态 = () => ({
   template: `
   <div>
     <el-radio disabled v-model="radio" label="禁用">备选项</el-radio>
@@ -61,8 +71,13 @@ export const 禁用状态 = (args, { argTypes }) => ({
     }
   }
 })
+禁用状态.parameters = {
+  docs: {
+    story: '单选框不可用的状态。'
+  }
+}
 
-export const 单选框组 = (args, { argTypes }) => ({
+export const 单选框组 = () => ({
   template: `
   <el-radio-group v-model="radio">
     <el-radio :label="3">备选项</el-radio>
@@ -76,8 +91,13 @@ export const 单选框组 = (args, { argTypes }) => ({
     }
   }
 })
+单选框组.parameters = {
+  docs: {
+    story: '适用于在多个互斥的选项中选择的场景'
+  }
+}
 
-export const 按钮样式 = (args, { argTypes }) => ({
+export const 按钮样式 = () => ({
   template: `
   <div>
     <div>
@@ -123,8 +143,13 @@ export const 按钮样式 = (args, { argTypes }) => ({
     }
   }
 })
+按钮样式.parameters = {
+  docs: {
+    story: '按钮样式的单选组合。'
+  }
+}
 
-export const 带有边框 = (args, { argTypes }) => ({
+export const 带有边框 = () => ({
   template: `
   <div>
     <div>

@@ -33,14 +33,19 @@ export default {
       control: 'object',
       description: '预定义颜色'
     }
+  },
+  parameters: {
+    docs: {
+      description: {
+        component: '用于颜色选择，支持多种格式。'
+      }
+    }
   }
 }
 
-const Template = (args, { argTypes }) => ({})
+export const Attributes = () => ({})
 
-export const Attributes = Template.bind({})
-
-export const 基础用法 = (args, { argTypes }) => ({
+export const 基础用法 = () => ({
   template: `
   <div>
     <div class="block">
@@ -61,7 +66,7 @@ export const 基础用法 = (args, { argTypes }) => ({
   }
 })
 
-export const 选择透明度 = (args, { argTypes }) => ({
+export const 选择透明度 = () => ({
   template: `<el-color-picker v-model="color" show-alpha></el-color-picker>`,
   data() {
     return {
@@ -70,7 +75,7 @@ export const 选择透明度 = (args, { argTypes }) => ({
   }
 })
 
-export const 预定义颜色 = (args, { argTypes }) => ({
+export const 预定义颜色 = () => ({
   template: `
   <el-color-picker
     v-model="color"
@@ -101,7 +106,7 @@ export const 预定义颜色 = (args, { argTypes }) => ({
   }
 })
 
-export const 不同尺寸 = (args, { argTypes }) => ({
+export const 不同尺寸 = () => ({
   template: `
   <div>
     <el-color-picker v-model="color"></el-color-picker>

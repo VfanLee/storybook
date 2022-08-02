@@ -126,17 +126,19 @@ export default {
       defaultValue: false,
       description: '对于不可搜索的 Select，是否在输入框获得焦点后自动弹出选项菜单'
     }
+  },
+  parameters: {
+    docs: {
+      description: {
+        component: '当选项过多时，使用下拉菜单展示并选择内容。'
+      }
+    }
   }
 }
 
-const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  template: '<el-button v-bind="$props">Button</el-button>'
-})
+export const Attitudes = () => ({})
 
-export const Attributes = Template.bind({})
-
-export const 基础用法 = (args, { argTypes }) => ({
+export const 基础用法 = () => ({
   template: `
   <el-select v-model="value" placeholder="请选择">
     <el-option
@@ -175,8 +177,15 @@ export const 基础用法 = (args, { argTypes }) => ({
     }
   }
 })
+基础用法.parameters = {
+  docs: {
+    description: {
+      story: '适用广泛的基础单选'
+    }
+  }
+}
 
-export const 有禁用选项 = (args, { argTypes }) => ({
+export const 有禁用选项 = () => ({
   template: `
   <el-select v-model="value" placeholder="请选择">
   <el-option
@@ -218,7 +227,7 @@ export const 有禁用选项 = (args, { argTypes }) => ({
   }
 })
 
-export const 禁用状态 = (args, { argTypes }) => ({
+export const 禁用状态 = () => ({
   template: `
   <el-select v-model="value" disabled placeholder="请选择">
   <el-option
@@ -257,8 +266,15 @@ export const 禁用状态 = (args, { argTypes }) => ({
     }
   }
 })
+禁用状态.parameters = {
+  docs: {
+    description: {
+      story: '选择器不可用状态'
+    }
+  }
+}
 
-export const 可清空单选 = (args, { argTypes }) => ({
+export const 可清空单选 = () => ({
   template: `
   <el-select v-model="value" clearable placeholder="请选择">
   <el-option
@@ -297,8 +313,15 @@ export const 可清空单选 = (args, { argTypes }) => ({
     }
   }
 })
+可清空单选.parameters = {
+  docs: {
+    description: {
+      story: '包含清空按钮，可将选择器清空为初始状态'
+    }
+  }
+}
 
-export const 基础多选 = (args, { argTypes }) => ({
+export const 基础多选 = () => ({
   template: `
   <div>
   <el-select v-model="value1" multiple placeholder="请选择">
@@ -354,8 +377,15 @@ export const 基础多选 = (args, { argTypes }) => ({
     }
   }
 })
+基础多选.parameters = {
+  docs: {
+    description: {
+      story: '适用性较广的基础多选，用 Tag 展示已选项'
+    }
+  }
+}
 
-export const 自定义模板 = (args, { argTypes }) => ({
+export const 自定义模板 = () => ({
   template: `
   <el-select v-model="value" placeholder="请选择">
   <el-option
@@ -400,8 +430,15 @@ export const 自定义模板 = (args, { argTypes }) => ({
     }
   }
 })
+自定义模板.parameters = {
+  docs: {
+    description: {
+      story: '可以自定义备选项'
+    }
+  }
+}
 
-export const 分组 = (args, { argTypes }) => ({
+export const 分组 = () => ({
   template: `
   <el-select v-model="value" placeholder="请选择">
     <el-option-group
@@ -459,8 +496,15 @@ export const 分组 = (args, { argTypes }) => ({
     }
   }
 })
+分组.parameters = {
+  docs: {
+    description: {
+      story: '备选项进行分组展示'
+    }
+  }
+}
 
-export const 可搜索 = (args, { argTypes }) => ({
+export const 可搜索 = () => ({
   template: `
   <el-select v-model="value" filterable placeholder="请选择">
     <el-option
@@ -499,8 +543,15 @@ export const 可搜索 = (args, { argTypes }) => ({
     }
   }
 })
+可搜索.parameters = {
+  docs: {
+    description: {
+      story: '可以利用搜索功能快速查找选项'
+    }
+  }
+}
 
-export const 远程搜索 = (args, { argTypes }) => ({
+export const 远程搜索 = () => ({
   template: `
   <el-select
     v-model="value"
@@ -600,8 +651,15 @@ export const 远程搜索 = (args, { argTypes }) => ({
     }
   }
 })
+远程搜索.parameters = {
+  docs: {
+    description: {
+      story: '从服务器搜索数据，输入关键字进行查找'
+    }
+  }
+}
 
-export const 创建条目 = (args, { argTypes }) => ({
+export const 创建条目 = () => ({
   template: `
   <el-select
     v-model="value"
@@ -638,3 +696,10 @@ export const 创建条目 = (args, { argTypes }) => ({
     }
   }
 })
+创建条目.parameters = {
+  docs: {
+    description: {
+      story: '可以创建并选中选项中不存在的条目'
+    }
+  }
+}

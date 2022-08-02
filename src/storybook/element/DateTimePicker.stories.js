@@ -108,14 +108,19 @@ export default {
       defaultValue: 'el-icon-circle-close',
       description: '自定义清空图标的类名'
     }
+  },
+  parameters: {
+    docs: {
+      description: {
+        component: '在同一个选择器里选择日期和时间'
+      }
+    }
   }
 }
 
-const Template = (args, { argTypes }) => ({})
+export const Attributes = () => ({})
 
-export const Attributes = Template.bind({})
-
-export const 日期和时间点 = (args, { argTypes }) => ({
+export const 日期和时间点 = () => ({
   template: `
   <div>
     <div class="block">
@@ -182,7 +187,7 @@ export const 日期和时间点 = (args, { argTypes }) => ({
   }
 })
 
-export const 基础用法 = (args, { argTypes }) => ({
+export const 基础用法 = () => ({
   template: `
   <div class="block">
     <span class="demonstration">默认</span>
@@ -246,7 +251,7 @@ export const 基础用法 = (args, { argTypes }) => ({
   }
 })
 
-export const 默认的起始与结束时刻 = (args, { argTypes }) => ({
+export const 默认的起始与结束时刻 = () => ({
   template: `
   <div>
     <div class="block">

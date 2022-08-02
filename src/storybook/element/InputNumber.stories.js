@@ -62,17 +62,19 @@ export default {
       control: 'text',
       description: '输入框默认 placeholder'
     }
+  },
+  parameters: {
+    docs: {
+      description: {
+        component: '仅允许输入标准的数字值，可定义范围'
+      }
+    }
   }
 }
 
-const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  template: '<el-button v-bind="$props">Button</el-button>'
-})
+export const Attributes = () => ({})
 
-export const Attributes = Template.bind({})
-
-export const 基础用法 = (args, { argTypes }) => ({
+export const 基础用法 = () => ({
   template: `<el-input-number v-model="num" @change="handleChange" :min="1" :max="10" label="描述文字"></el-input-number>`,
   data() {
     return {
@@ -86,7 +88,7 @@ export const 基础用法 = (args, { argTypes }) => ({
   }
 })
 
-export const 禁用状态 = (args, { argTypes }) => ({
+export const 禁用状态 = () => ({
   template: `<el-input-number v-model="num" :disabled="true"></el-input-number>`,
   data() {
     return {
@@ -95,7 +97,7 @@ export const 禁用状态 = (args, { argTypes }) => ({
   }
 })
 
-export const 步数 = (args, { argTypes }) => ({
+export const 步数 = () => ({
   template: `<el-input-number v-model="num" :step="2"></el-input-number>`,
   data() {
     return {
@@ -104,7 +106,7 @@ export const 步数 = (args, { argTypes }) => ({
   }
 })
 
-export const 严格步数 = (args, { argTypes }) => ({
+export const 严格步数 = () => ({
   template: `<el-input-number v-model="num" :step="2" step-strictly></el-input-number>`,
   data() {
     return {
@@ -118,7 +120,7 @@ export const 严格步数 = (args, { argTypes }) => ({
   }
 })
 
-export const 精度 = (args, { argTypes }) => ({
+export const 精度 = () => ({
   template: `<el-input-number v-model="num" :precision="2" :step="0.1" :max="10"></el-input-number>`,
   data() {
     return {
@@ -127,7 +129,7 @@ export const 精度 = (args, { argTypes }) => ({
   }
 })
 
-export const 尺寸 = (args, { argTypes }) => ({
+export const 尺寸 = () => ({
   template: `
   <div>
     <el-input-number v-model="num1"></el-input-number>
@@ -146,7 +148,7 @@ export const 尺寸 = (args, { argTypes }) => ({
   }
 })
 
-export const 按钮位置 = (args, { argTypes }) => ({
+export const 按钮位置 = () => ({
   template: `
   <el-input-number v-model="num" controls-position="right" @change="handleChange" :min="1" :max="10"></el-input-number>
   `,

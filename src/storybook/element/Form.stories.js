@@ -63,14 +63,19 @@ export default {
       defaultValue: false,
       description: '是否禁用该表单内的所有组件。若设置为 true，则表单内组件上的 disabled 属性不再生效'
     }
+  },
+  parameters: {
+    docs: {
+      description: {
+        component: '由输入框、选择器、单选框、多选框等控件组成，用以收集、校验、提交数据'
+      }
+    }
   }
 }
 
-const Template = (args, { argTypes }) => ({})
+export const Attributes = () => ({})
 
-export const Attributes = Template.bind({})
-
-export const 典型表单 = (args, { argTypes }) => ({
+export const 典型表单 = () => ({
   template: `
   <el-form ref="form" :model="form" label-width="80px">
     <el-form-item label="活动名称">
@@ -137,8 +142,15 @@ export const 典型表单 = (args, { argTypes }) => ({
     }
   }
 })
+典型表单.parameters = {
+  docs: {
+    description: {
+      story: '包括各种表单项，比如输入框、选择器、开关、单选框、多选框等。'
+    }
+  }
+}
 
-export const 行内表单 = (args, { argTypes }) => ({
+export const 行内表单 = () => ({
   template: `
   <el-form :inline="true" :model="formInline" class="demo-form-inline">
     <el-form-item label="审批人">
@@ -169,8 +181,15 @@ export const 行内表单 = (args, { argTypes }) => ({
     }
   }
 })
+行内表单.parameters = {
+  docs: {
+    description: {
+      story: '当垂直方向空间受限且表单较简单时，可以在一行内放置表单。'
+    }
+  }
+}
 
-export const 对齐方式 = (args, { argTypes }) => ({
+export const 对齐方式 = () => ({
   template: `
   <div>
     <el-radio-group v-model="labelPosition" size="small">
@@ -203,8 +222,15 @@ export const 对齐方式 = (args, { argTypes }) => ({
     }
   }
 })
+对齐方式.parameters = {
+  docs: {
+    description: {
+      story: '根据具体目标和制约因素，选择最佳的标签对齐方式。'
+    }
+  }
+}
 
-export const 表单验证 = (args, { argTypes }) => ({
+export const 表单验证 = () => ({
   template: `
   <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
     <el-form-item label="活动名称" prop="name">
@@ -297,8 +323,15 @@ export const 表单验证 = (args, { argTypes }) => ({
     }
   }
 })
+表单验证.parameters = {
+  docs: {
+    description: {
+      story: '在防止用户犯错的前提下，尽可能让用户更早地发现并纠正错误。'
+    }
+  }
+}
 
-export const 自定义校验规则 = (args, { argTypes }) => ({
+export const 自定义校验规则 = () => ({
   template: `
   <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
     <el-form-item label="密码" prop="pass">
@@ -381,8 +414,15 @@ export const 自定义校验规则 = (args, { argTypes }) => ({
     }
   }
 })
+自定义校验规则.parameters = {
+  docs: {
+    description: {
+      story: '这个例子中展示了如何使用自定义验证规则来完成密码的二次验证。'
+    }
+  }
+}
 
-export const 动态增减表单项 = (args, { argTypes }) => ({
+export const 动态增减表单项 = () => ({
   template: `
   <el-form :model="dynamicValidateForm" ref="dynamicValidateForm" label-width="100px" class="demo-dynamic">
     <el-form-item
@@ -454,7 +494,7 @@ export const 动态增减表单项 = (args, { argTypes }) => ({
   }
 })
 
-export const 数字类型验证 = (args, { argTypes }) => ({
+export const 数字类型验证 = () => ({
   template: `
   <el-form :model="numberValidateForm" ref="numberValidateForm" label-width="100px" class="demo-ruleForm">
     <el-form-item
@@ -497,7 +537,7 @@ export const 数字类型验证 = (args, { argTypes }) => ({
   }
 })
 
-export const 表单内组件尺寸控制 = (args, { argTypes }) => ({
+export const 表单内组件尺寸控制 = () => ({
   template: `
   <el-form ref="form" :model="sizeForm" label-width="80px" size="mini">
     <el-form-item label="活动名称">
@@ -557,3 +597,10 @@ export const 表单内组件尺寸控制 = (args, { argTypes }) => ({
     }
   }
 })
+表单内组件尺寸控制.parameters = {
+  docs: {
+    description: {
+      story: '通过设置 Form 上的 size 属性可以使该表单内所有可调节大小的组件继承该尺寸。Form-Item 也具有该属性。'
+    }
+  }
+}

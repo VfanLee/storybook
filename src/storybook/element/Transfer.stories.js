@@ -65,14 +65,9 @@ export default {
   }
 }
 
-const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  template: ``
-})
+export const Attributes = () => ({})
 
-export const Attributes = Template.bind({})
-
-export const 基础用法 = (args, { argTypes }) => ({
+export const 基础用法 = () => ({
   template: `<el-transfer v-model="value" :data="data"></el-transfer>`,
   data() {
     const generateData = _ => {
@@ -93,7 +88,7 @@ export const 基础用法 = (args, { argTypes }) => ({
   }
 })
 
-export const 可搜索 = (args, { argTypes }) => ({
+export const 可搜索 = () => ({
   template: `
   <el-transfer
     filterable
@@ -126,8 +121,13 @@ export const 可搜索 = (args, { argTypes }) => ({
     }
   }
 })
+可搜索.parameters = {
+  docs: {
+    story: '在数据很多的情况下，可以对数据进行搜索和过滤。'
+  }
+}
 
-// export const 可自定义 = (args, { argTypes }) => ({
+// export const 可自定义 = () => ({
 //   template: `
 //   <div>
 //     <p style="text-align: center; margin: 0 0 20px">使用 render-content 自定义数据项</p>
@@ -205,8 +205,13 @@ export const 可搜索 = (args, { argTypes }) => ({
 //     }
 //   }
 // })
+// 可自定义.parameters = {
+//   docs: {
+//     story: '可以对列表标题文案、按钮文案、数据项的渲染函数、列表底部的勾选状态文案、列表底部的内容区等进行自定义。'
+//   }
+// }
 
-export const 数据项属性别名 = (args, { argTypes }) => ({
+export const 数据项属性别名 = () => ({
   template: `
   <el-transfer
     v-model="value"
@@ -235,3 +240,10 @@ export const 数据项属性别名 = (args, { argTypes }) => ({
     }
   }
 })
+数据项属性别名.parameters = {
+  docs: {
+    description: {
+      story: '默认情况下，Transfer 仅能识别数据项中的 key、label 和 disabled 字段。如果你的数据的字段名不同，可以使用 props 属性为它们设置别名。'
+    }
+  }
+}

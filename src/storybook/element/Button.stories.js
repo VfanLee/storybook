@@ -27,7 +27,9 @@ export default {
       description: '是否圆形按钮'
     },
     loading: {
-      control: 'boolean',
+      control: {
+        type: 'boolean'
+      },
       defaultValue: false,
       description: '是否加载中状态'
     },
@@ -51,17 +53,19 @@ export default {
       defaultValue: 'button',
       description: '原生 type 属性'
     }
+  },
+  parameters: {
+    docs: {
+      description: {
+        component: '常用的操作按钮。'
+      }
+    }
   }
 }
 
-const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  template: '<el-button v-bind="$props">Button</el-button>'
-})
+export const Attributes = () => ({})
 
-export const Attributes = Template.bind({})
-
-export const 基础用法 = (args, { argTypes }) => ({
+export const 基础用法 = () => ({
   template: `
   <div>
     <el-row style="margin: 10px 0">
@@ -102,8 +106,15 @@ export const 基础用法 = (args, { argTypes }) => ({
   </div>
   `
 })
+基础用法.parameters = {
+  docs: {
+    description: {
+      story: '基础的按钮用法。'
+    }
+  }
+}
 
-export const 禁用状态 = (args, { argTypes }) => ({
+export const 禁用状态 = () => ({
   template: `
   <div>
     <el-row style="margin: 10px 0">
@@ -126,8 +137,15 @@ export const 禁用状态 = (args, { argTypes }) => ({
   </div>
   `
 })
+禁用状态.parameters = {
+  docs: {
+    description: {
+      story: '按钮不可用状态。'
+    }
+  }
+}
 
-export const 文字按钮 = (args, { argTypes }) => ({
+export const 文字按钮 = () => ({
   template: `
   <div>
     <el-button type="text">文字按钮</el-button>
@@ -135,8 +153,15 @@ export const 文字按钮 = (args, { argTypes }) => ({
   </div>
   `
 })
+文字按钮.parameters = {
+  docs: {
+    description: {
+      story: '没有边框和背景色的按钮。'
+    }
+  }
+}
 
-export const 图标按钮 = (args, { argTypes }) => ({
+export const 图标按钮 = () => ({
   template: `
   <div>
     <el-button type="primary" icon="el-icon-edit"></el-button>
@@ -147,8 +172,15 @@ export const 图标按钮 = (args, { argTypes }) => ({
   </div>
   `
 })
+图标按钮.parameters = {
+  docs: {
+    description: {
+      story: '带图标的按钮可增强辨识度（有文字）或节省空间（无文字）。'
+    }
+  }
+}
 
-export const 按钮组 = (args, { argTypes }) => ({
+export const 按钮组 = () => ({
   template: `
   <div>
     <el-button-group>
@@ -163,16 +195,30 @@ export const 按钮组 = (args, { argTypes }) => ({
   </div>
   `
 })
+按钮组.parameters = {
+  docs: {
+    description: {
+      story: '以按钮组的方式出现，常用于多项类似操作。'
+    }
+  }
+}
 
-export const 加载中 = (args, { argTypes }) => ({
+export const 加载中 = () => ({
   template: `
   <div>
     <el-button type="primary" :loading="true">加载中</el-button>
   </div>
   `
 })
+加载中.parameters = {
+  docs: {
+    description: {
+      story: '点击按钮后进行数据加载操作，在按钮上显示加载状态。'
+    }
+  }
+}
 
-export const 不同尺寸 = (args, { argTypes }) => ({
+export const 不同尺寸 = () => ({
   template: `
   <div>
     <el-row>
@@ -190,3 +236,10 @@ export const 不同尺寸 = (args, { argTypes }) => ({
   </div>
   `
 })
+不同尺寸.parameters = {
+  docs: {
+    description: {
+      story: 'Button 组件提供除了默认值以外的三种尺寸，可以在不同场景下选择合适的按钮尺寸。'
+    }
+  }
+}

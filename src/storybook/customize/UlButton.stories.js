@@ -5,14 +5,14 @@ export default {
   component: UlButton,
   argTypes: {
     type: {
-      description: '预设样式',
-      control: { type: 'select' },
-      options: ['primary', 'success', 'warning', 'danger', 'info', 'link']
+      control: 'select',
+      options: ['primary', 'success', 'warning', 'danger', 'info', 'link'],
+      description: '预设样式'
     },
     size: {
-      description: '尺寸',
-      control: { type: 'radio' },
-      options: ['large', 'small', 'mini']
+      control: 'radio',
+      options: ['large', 'small', 'mini'],
+      description: '尺寸'
     }
   }
 }
@@ -24,7 +24,7 @@ const Template = (args, { argTypes }) => ({
 })
 export const Attributes = Template.bind({})
 
-export const 预定样式 = (args, { argTypes }) => ({
+export const 预定样式 = () => ({
   components: { UlButton },
   template: `
     <div>
@@ -39,7 +39,7 @@ export const 预定样式 = (args, { argTypes }) => ({
   `
 })
 
-export const 尺寸 = (args, { argTypes }) => ({
+export const 尺寸 = () => ({
   components: { UlButton },
   template: `
     <div>

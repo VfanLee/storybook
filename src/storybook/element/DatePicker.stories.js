@@ -108,14 +108,19 @@ export default {
       defaultValue: true,
       description: '输入时是否触发表单的校验'
     }
+  },
+  parameters: {
+    docs: {
+      description: {
+        component: '用于选择或输入日期'
+      }
+    }
   }
 }
 
-const Template = (args, { argTypes }) => ({})
+export const Attributes = () => ({})
 
-export const Attributes = Template.bind({})
-
-export const 选择日 = (args, { argTypes }) => ({
+export const 选择日 = () => ({
   template: `
   <div>
     <div class="block">
@@ -174,8 +179,15 @@ export const 选择日 = (args, { argTypes }) => ({
     }
   }
 })
+选择日.parameters = {
+  docs: {
+    description: {
+      story: '以「日」为基本单位，基础的日期选择控件'
+    }
+  }
+}
 
-export const 其他日期单位 = (args, { argTypes }) => ({
+export const 其他日期单位 = () => ({
   template: `
   <div>
     <div class="container">
@@ -226,8 +238,15 @@ export const 其他日期单位 = (args, { argTypes }) => ({
     }
   }
 })
+其他日期单位.parameters = {
+  docs: {
+    description: {
+      story: '通过扩展基础的日期选择，可以选择周、月、年或多个日期'
+    }
+  }
+}
 
-export const 选择日期范围 = (args, { argTypes }) => ({
+export const 选择日期范围 = () => ({
   template: `
   <div>
     <div class="block">
@@ -293,8 +312,15 @@ export const 选择日期范围 = (args, { argTypes }) => ({
     }
   }
 })
+选择日期范围.parameters = {
+  docs: {
+    description: {
+      story: '可在一个选择器中便捷地选择一个时间范围'
+    }
+  }
+}
 
-export const 选择月份范围 = (args, { argTypes }) => ({
+export const 选择月份范围 = () => ({
   template: `
   <div>
     <div class="block">
@@ -356,8 +382,15 @@ export const 选择月份范围 = (args, { argTypes }) => ({
     }
   }
 })
+选择月份范围.parameters = {
+  docs: {
+    description: {
+      story: '可在一个选择器中便捷地选择一个月份范围'
+    }
+  }
+}
 
-export const 日期格式 = (args, { argTypes }) => ({
+export const 日期格式 = () => ({
   template: `
   <div>
     <div class="block">
@@ -402,8 +435,15 @@ export const 日期格式 = (args, { argTypes }) => ({
     }
   }
 })
+日期格式.parameters = {
+  docs: {
+    description: {
+      story: '使用format指定输入框的格式；使用value-format指定绑定值的格式。默认情况下，组件接受并返回Date对象。'
+    }
+  }
+}
 
-export const 默认显示日期 = (args, { argTypes }) => ({
+export const 默认显示日期 = () => ({
   template: `
   <div class="block">
     <p>组件值：{{ value }}</p>
@@ -422,3 +462,10 @@ export const 默认显示日期 = (args, { argTypes }) => ({
     }
   }
 })
+默认显示日期.parameters = {
+  docs: {
+    description: {
+      story: '在选择日期范围时，指定起始日期和结束日期的默认时刻。'
+    }
+  }
+}

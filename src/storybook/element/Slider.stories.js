@@ -92,14 +92,19 @@ export default {
       control: 'object',
       description: '标记， key 的类型必须为 number 且取值在闭区间 [min, max] 内，每个标记可以单独设置样式'
     }
+  },
+  parameters: {
+    docs: {
+      description: {
+        component: '通过拖动滑块在一个固定区间内进行选择'
+      }
+    }
   }
 }
 
-const Template = (args, { argTypes }) => ({})
+export const Attitudes = () => ({})
 
-export const Attributes = Template.bind({})
-
-export const 基本使用 = (args, { argTypes }) => ({
+export const 基本使用 = () => ({
   template: `
   <div>
     <div class="block">
@@ -139,8 +144,15 @@ export const 基本使用 = (args, { argTypes }) => ({
     }
   }
 })
+基本使用.parameters = {
+  docs: {
+    description: {
+      story: '在拖动滑块时，显示当前值'
+    }
+  }
+}
 
-export const 离散值 = (args, { argTypes }) => ({
+export const 离散值 = () => ({
   template: `
   <div>
     <div class="block">
@@ -167,8 +179,15 @@ export const 离散值 = (args, { argTypes }) => ({
     }
   }
 })
+离散值.parameters = {
+  docs: {
+    description: {
+      story: '选项可以是离散的'
+    }
+  }
+}
 
-export const 带有输入框 = (args, { argTypes }) => ({
+export const 带有输入框 = () => ({
   template: `
   <div class="block">
     <el-slider
@@ -183,8 +202,15 @@ export const 带有输入框 = (args, { argTypes }) => ({
     }
   }
 })
+带有输入框.parameters = {
+  docs: {
+    description: {
+      story: '通过输入框设置精确数值'
+    }
+  }
+}
 
-export const 范围选择 = (args, { argTypes }) => ({
+export const 范围选择 = () => ({
   template: `
   <div class="block">
     <el-slider
@@ -201,8 +227,15 @@ export const 范围选择 = (args, { argTypes }) => ({
     }
   }
 })
+范围选择.parameters = {
+  docs: {
+    description: {
+      story: '支持选择某一数值范围'
+    }
+  }
+}
 
-export const 竖向模式 = (args, { argTypes }) => ({
+export const 竖向模式 = () => ({
   template: `
   <div class="block">
     <el-slider
@@ -219,7 +252,7 @@ export const 竖向模式 = (args, { argTypes }) => ({
   }
 })
 
-export const 展示标记 = (args, { argTypes }) => ({
+export const 展示标记 = () => ({
   template: `
   <div class="block">
     <el-slider

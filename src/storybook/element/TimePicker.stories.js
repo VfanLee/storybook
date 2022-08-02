@@ -93,14 +93,19 @@ export default {
       defaultValue: 'el-icon-circle-close',
       description: '自定义清空图标的类名'
     }
+  },
+  parameters: {
+    docs: {
+      description: {
+        component: '用于选择或输入日期'
+      }
+    }
   }
 }
 
-const Template = (args, { argTypes }) => ({})
+export const Attributes = () => ({})
 
-export const Attributes = Template.bind({})
-
-export const 固定时间点 = (args, { argTypes }) => ({
+export const 固定时间点 = () => ({
   template: `
   <el-time-select
     v-model="value"
@@ -118,8 +123,15 @@ export const 固定时间点 = (args, { argTypes }) => ({
     }
   }
 })
+固定时间点.parameters = {
+  docs: {
+    description: {
+      story: '提供几个固定的时间点供用户选择'
+    }
+  }
+}
 
-export const 任意时间点 = (args, { argTypes }) => ({
+export const 任意时间点 = () => ({
   template: `
   <div>
     <el-time-picker
@@ -146,8 +158,15 @@ export const 任意时间点 = (args, { argTypes }) => ({
     }
   }
 })
+任意时间点.parameters = {
+  docs: {
+    description: {
+      story: '可以选择任意时间'
+    }
+  }
+}
 
-export const 固定时间范围 = (args, { argTypes }) => ({
+export const 固定时间范围 = () => ({
   template: `
   <div>
     <el-time-select
@@ -178,8 +197,15 @@ export const 固定时间范围 = (args, { argTypes }) => ({
     }
   }
 })
+固定时间范围.parameters = {
+  docs: {
+    description: {
+      story: '若先选择开始时间，则结束时间内备选项的状态会随之改变'
+    }
+  }
+}
 
-export const 任意时间范围 = (args, { argTypes }) => ({
+export const 任意时间范围 = () => ({
   template: `
   <div>
     <el-time-picker
@@ -208,3 +234,10 @@ export const 任意时间范围 = (args, { argTypes }) => ({
     }
   }
 })
+任意时间范围.parameters = {
+  docs: {
+    description: {
+      story: '可选择任意的时间范围'
+    }
+  }
+}

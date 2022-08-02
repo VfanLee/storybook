@@ -1,7 +1,7 @@
 export default {
   title: 'Element/Checkbox',
   argTypes: {
-    value: {
+    'v-model': {
       control: 'text',
       description: '绑定值'
     },
@@ -46,16 +46,19 @@ export default {
       defaultValue: false,
       description: '设置 indeterminate 状态，只负责样式控制'
     }
+  },
+  parameters: {
+    docs: {
+      description: {
+        component: '一组备选项中进行多选'
+      }
+    }
   }
 }
 
-const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes)
-})
+export const Attributes = () => ({})
 
-export const Attributes = Template.bind({})
-
-export const 基础用法 = (args, { argTypes }) => ({
+export const 基础用法 = () => ({
   template: `<el-checkbox v-model="checked">备选项</el-checkbox>`,
   data() {
     return {
@@ -63,8 +66,15 @@ export const 基础用法 = (args, { argTypes }) => ({
     }
   }
 })
+基础用法.parameters = {
+  docs: {
+    description: {
+      story: '单独使用可以表示两种状态之间的切换，写在标签中的内容为 checkbox 按钮后的介绍。'
+    }
+  }
+}
 
-export const 禁用状态 = (args, { argTypes }) => ({
+export const 禁用状态 = () => ({
   template: `
   <div>
     <el-checkbox v-model="checked1" disabled>备选项1</el-checkbox>
@@ -78,8 +88,15 @@ export const 禁用状态 = (args, { argTypes }) => ({
     }
   }
 })
+禁用状态.parameters = {
+  docs: {
+    description: {
+      story: '多选框不可用状态。'
+    }
+  }
+}
 
-export const 多选框组 = (args, { argTypes }) => ({
+export const 多选框组 = () => ({
   template: `
   <el-checkbox-group v-model="checkList">
     <el-checkbox label="复选框 A"></el-checkbox>
@@ -95,8 +112,15 @@ export const 多选框组 = (args, { argTypes }) => ({
     }
   }
 })
+多选框组.parameters = {
+  docs: {
+    description: {
+      story: '适用于多个勾选框绑定到同一个数组的情景，通过是否勾选来表示这一组选项中选中的项。'
+    }
+  }
+}
 
-export const indeterminate状态 = (args, { argTypes }) => ({
+export const indeterminate状态 = () => ({
   template: `
   <div>
     <el-checkbox :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange">全选</el-checkbox>
@@ -127,8 +151,15 @@ export const indeterminate状态 = (args, { argTypes }) => ({
     }
   }
 })
+indeterminate状态.parameters = {
+  docs: {
+    description: {
+      story: 'indeterminate 属性用以表示 checkbox 的不确定状态，一般用于实现全选的效果'
+    }
+  }
+}
 
-export const 可选项目数量的限制 = (args, { argTypes }) => ({
+export const 可选项目数量的限制 = () => ({
   template: `
   <el-checkbox-group 
     v-model="checkedCities"
@@ -145,8 +176,15 @@ export const 可选项目数量的限制 = (args, { argTypes }) => ({
     }
   }
 })
+可选项目数量的限制.parameters = {
+  docs: {
+    description: {
+      story: '使用 min 和 max 属性能够限制可以被勾选的项目的数量。'
+    }
+  }
+}
 
-export const 按钮样式 = (args, { argTypes }) => ({
+export const 按钮样式 = () => ({
   template: `
   <div>
     <div>
@@ -181,8 +219,15 @@ export const 按钮样式 = (args, { argTypes }) => ({
     }
   }
 })
+按钮样式.parameters = {
+  docs: {
+    description: {
+      story: '按钮样式的多选组合。'
+    }
+  }
+}
 
-export const 带有边框 = (args, { argTypes }) => ({
+export const 带有边框 = () => ({
   template: `
   <div>
     <div>

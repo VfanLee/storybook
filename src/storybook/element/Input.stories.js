@@ -124,14 +124,19 @@ export default {
       defaultValue: true,
       description: '输入时是否触发表单的校验'
     }
+  },
+  parameters: {
+    docs: {
+      description: {
+        component: '通过鼠标或键盘输入字符'
+      }
+    }
   }
 }
 
-const Template = (args, { argTypes }) => ({})
+export const Attributes = () => ({})
 
-export const Attributes = Template.bind({})
-
-export const 基础用法 = (args, { argTypes }) => ({
+export const 基础用法 = () => ({
   template: `<el-input v-model="input" placeholder="请输入内容"></el-input>`,
   data() {
     return {
@@ -140,7 +145,7 @@ export const 基础用法 = (args, { argTypes }) => ({
   }
 })
 
-export const 禁用状态 = (args, { argTypes }) => ({
+export const 禁用状态 = () => ({
   template: `
   <el-input
     placeholder="请输入内容"
@@ -154,7 +159,7 @@ export const 禁用状态 = (args, { argTypes }) => ({
   }
 })
 
-export const 可清空 = (args, { argTypes }) => ({
+export const 可清空 = () => ({
   template: `
   <el-input
     placeholder="请输入内容"
@@ -169,7 +174,7 @@ export const 可清空 = (args, { argTypes }) => ({
   }
 })
 
-export const 密码框 = (args, { argTypes }) => ({
+export const 密码框 = () => ({
   template: `<el-input placeholder="请输入密码" v-model="input" show-password></el-input>`,
   data() {
     return {
@@ -178,7 +183,7 @@ export const 密码框 = (args, { argTypes }) => ({
   }
 })
 
-export const 带icon的输入框 = (args, { argTypes }) => ({
+export const 带icon的输入框 = () => ({
   template: `
   <div>
   <div class="demo-input-suffix">
@@ -216,7 +221,7 @@ export const 带icon的输入框 = (args, { argTypes }) => ({
   }
 })
 
-export const 文本域 = (args, { argTypes }) => ({
+export const 文本域 = () => ({
   template: `
   <el-input
     type="textarea"
@@ -232,7 +237,7 @@ export const 文本域 = (args, { argTypes }) => ({
   }
 })
 
-export const 可自适应文本高度的文本域 = (args, { argTypes }) => ({
+export const 可自适应文本高度的文本域 = () => ({
   template: `
   <div>
     <el-input
@@ -258,7 +263,7 @@ export const 可自适应文本高度的文本域 = (args, { argTypes }) => ({
   }
 })
 
-export const 复合型输入框 = (args, { argTypes }) => ({
+export const 复合型输入框 = () => ({
   template: `
   <div>
   <div>
@@ -293,7 +298,7 @@ export const 复合型输入框 = (args, { argTypes }) => ({
   }
 })
 
-export const 尺寸 = (args, { argTypes }) => ({
+export const 尺寸 = () => ({
   template: `
   <div class="demo-input-size">
   <el-input
@@ -331,7 +336,7 @@ export const 尺寸 = (args, { argTypes }) => ({
   }
 })
 
-export const 带输入建议 = (args, { argTypes }) => ({
+export const 带输入建议 = () => ({
   template: `
   <el-row class="demo-autocomplete">
   <el-col :span="12">
@@ -437,7 +442,7 @@ export const 带输入建议 = (args, { argTypes }) => ({
   }
 })
 
-export const 自定义模板 = (args, { argTypes }) => ({
+export const 自定义模板 = () => ({
   template: `
   <el-autocomplete
   popper-class="my-autocomplete"
@@ -538,7 +543,7 @@ export const 自定义模板 = (args, { argTypes }) => ({
   }
 })
 
-export const 远程搜索 = (args, { argTypes }) => ({
+export const 远程搜索 = () => ({
   template: `
   <el-autocomplete
     v-model="state"
@@ -630,7 +635,7 @@ export const 远程搜索 = (args, { argTypes }) => ({
   }
 })
 
-export const 输入长度限制 = (args, { argTypes }) => ({
+export const 输入长度限制 = () => ({
   template: `
     <div>
     <el-input

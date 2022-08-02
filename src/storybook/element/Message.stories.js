@@ -2,20 +2,9 @@ export default {
   title: 'Element/Message'
 }
 
-export const Attributes = (args, { argTypes }) => ({
-  template: `
-  <div>
-    <el-button v-bind="$props"  @click="open">打开消息提示</el-button>
-  </div>
-  `,
-  methods: {
-    open() {
-      this.$message('这是一条消息提示')
-    }
-  }
-})
+export const Attributes = () => ({})
 
-export const 基础用法 = (args, { argTypes }) => ({
+export const 基础用法 = () => ({
   template: `
   <div>
     <el-button :plain="true" @click="open">打开消息提示</el-button>
@@ -35,7 +24,7 @@ export const 基础用法 = (args, { argTypes }) => ({
   }
 })
 
-export const 不同状态 = (args, { argTypes }) => ({
+export const 不同状态 = () => ({
   template: `
   <div>
     <el-button :plain="true" @click="open2">成功</el-button>
@@ -66,7 +55,7 @@ export const 不同状态 = (args, { argTypes }) => ({
   }
 })
 
-export const 可关闭 = (args, { argTypes }) => ({
+export const 可关闭 = () => ({
   template: `
   <div>
     <el-button :plain="true" @click="open1">消息</el-button>
@@ -106,7 +95,7 @@ export const 可关闭 = (args, { argTypes }) => ({
   }
 })
 
-export const 文字居中 = (args, { argTypes }) => ({
+export const 文字居中 = () => ({
   template: `
   <div>
     <el-button :plain="true" @click="openCenter">文字居中</el-button>
@@ -122,7 +111,7 @@ export const 文字居中 = (args, { argTypes }) => ({
   }
 })
 
-export const 使用HTML片段 = (args, { argTypes }) => ({
+export const 使用HTML片段 = () => ({
   template: `
   <div>
     <el-button :plain="true" @click="openHTML">使用 HTML 片段</el-button>

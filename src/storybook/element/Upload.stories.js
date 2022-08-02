@@ -105,17 +105,19 @@ export default {
       control: 'object',
       description: '文件超出个数限制时的钩子'
     }
+  },
+  parameters: {
+    docs: {
+      description: {
+        component: '通过点击或者拖拽上传文件'
+      }
+    }
   }
 }
 
-const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  template: ``
-})
+export const Attributes = () => ({})
 
-export const Attributes = Template.bind({})
-
-export const 点击上传 = (args, { argTypes }) => ({
+export const 点击上传 = () => ({
   template: `
   <el-upload
     class="upload-demo"
@@ -155,7 +157,7 @@ export const 点击上传 = (args, { argTypes }) => ({
   }
 })
 
-export const 用户头像上传 = (args, { argTypes }) => ({
+export const 用户头像上传 = () => ({
   template: `
   <el-upload
     class="avatar-uploader"
@@ -191,7 +193,7 @@ export const 用户头像上传 = (args, { argTypes }) => ({
   }
 })
 
-export const 照片墙 = (args, { argTypes }) => ({
+export const 照片墙 = () => ({
   template: `
   <div>
     <el-upload
@@ -223,7 +225,7 @@ export const 照片墙 = (args, { argTypes }) => ({
   }
 })
 
-export const 文件缩略图 = (args, { argTypes }) => ({
+export const 文件缩略图 = () => ({
   template: `
   <div>
     <el-upload
@@ -286,7 +288,7 @@ export const 文件缩略图 = (args, { argTypes }) => ({
   }
 })
 
-export const 图片列表缩略图 = (args, { argTypes }) => ({
+export const 图片列表缩略图 = () => ({
   template: `
     <el-upload
       class="upload-demo"
@@ -317,7 +319,7 @@ export const 图片列表缩略图 = (args, { argTypes }) => ({
   }
 })
 
-export const 上传文件列表控制 = (args, { argTypes }) => ({
+export const 上传文件列表控制 = () => ({
   template: `
   <el-upload
     class="upload-demo"
@@ -349,7 +351,7 @@ export const 上传文件列表控制 = (args, { argTypes }) => ({
   }
 })
 
-export const 拖拽上传 = (args, { argTypes }) => ({
+export const 拖拽上传 = () => ({
   template: `
   <el-upload
     class="upload-demo"
@@ -363,7 +365,7 @@ export const 拖拽上传 = (args, { argTypes }) => ({
   `
 })
 
-export const 手动上传 = (args, { argTypes }) => ({
+export const 手动上传 = () => ({
   template: `
   <el-upload
     class="upload-demo"

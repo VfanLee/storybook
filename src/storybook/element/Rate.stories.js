@@ -85,14 +85,19 @@ export default {
       control: 'text',
       description: '分数显示模板'
     }
+  },
+  parameters: {
+    docs: {
+      description: {
+        component: '评分组件'
+      }
+    }
   }
 }
 
-const Template = (args, { argTypes }) => ({})
+export const Attitudes = () => ({})
 
-export const Attributes = Template.bind({})
-
-export const 基础用法 = (args, { argTypes }) => ({
+export const 基础用法 = () => ({
   template: `
   <div>
     <div class="block">
@@ -117,7 +122,7 @@ export const 基础用法 = (args, { argTypes }) => ({
   }
 })
 
-export const 辅助文字 = (args, { argTypes }) => ({
+export const 辅助文字 = () => ({
   template: `
   <el-rate
     v-model="value"
@@ -130,8 +135,15 @@ export const 辅助文字 = (args, { argTypes }) => ({
     }
   }
 })
+辅助文字.parameters = {
+  docs: {
+    description: {
+      story: '用辅助文字直接地表达对应分数'
+    }
+  }
+}
 
-export const 其它icon = (args, { argTypes }) => ({
+export const 其它icon = () => ({
   template: `
   <el-rate
     v-model="value"
@@ -147,8 +159,15 @@ export const 其它icon = (args, { argTypes }) => ({
     }
   }
 })
+其它icon.parameters = {
+  docs: {
+    description: {
+      story: '当有多层评价时，可以用不同类型的 icon 区分评分层级'
+    }
+  }
+}
 
-export const 只读 = (args, { argTypes }) => ({
+export const 只读 = () => ({
   template: `
   <el-rate
     v-model="value"
@@ -164,3 +183,10 @@ export const 只读 = (args, { argTypes }) => ({
     }
   }
 })
+只读.parameters = {
+  docs: {
+    description: {
+      story: '只读的评分用来展示分数，允许出现半星'
+    }
+  }
+}

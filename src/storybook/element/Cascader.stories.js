@@ -66,14 +66,19 @@ export default {
       control: 'text',
       description: '自定义浮层类名'
     }
+  },
+  parameters: {
+    docs: {
+      description: {
+        component: '当一个数据集合有清晰的层级结构时，可通过级联选择器逐级查看并选择。'
+      }
+    }
   }
 }
 
-const Template = (args, { argTypes }) => ({})
+export const Attributes = () => ({})
 
-export const Attributes = Template.bind({})
-
-export const 基础用法 = (args, { argTypes }) => ({
+export const 基础用法 = () => ({
   template: `
   <div>
     <div class="block">
@@ -372,8 +377,15 @@ export const 基础用法 = (args, { argTypes }) => ({
     }
   }
 })
+基础用法.parameters = {
+  docs: {
+    description: {
+      story: '有两种触发子菜单的方式'
+    }
+  }
+}
 
-export const 禁用选项 = (args, { argTypes }) => ({
+export const 禁用选项 = () => ({
   template: `<el-cascader :options="options"></el-cascader>`,
   data() {
     return {
@@ -649,8 +661,15 @@ export const 禁用选项 = (args, { argTypes }) => ({
     }
   }
 })
+禁用选项.parameters = {
+  docs: {
+    description: {
+      story: '通过在数据源中设置 disabled 字段来声明该选项是禁用的'
+    }
+  }
+}
 
-export const 可清空 = (args, { argTypes }) => ({
+export const 可清空 = () => ({
   template: `<el-cascader :options="options" clearable></el-cascader>`,
   data() {
     return {
@@ -925,8 +944,15 @@ export const 可清空 = (args, { argTypes }) => ({
     }
   }
 })
+可清空.parameters = {
+  docs: {
+    description: {
+      story: '通过 clearable 设置输入框可清空'
+    }
+  }
+}
 
-export const 仅显示最后一级 = (args, { argTypes }) => ({
+export const 仅显示最后一级 = () => ({
   template: `<el-cascader :options="options" :show-all-levels="false"></el-cascader>`,
   data() {
     return {
@@ -1201,8 +1227,15 @@ export const 仅显示最后一级 = (args, { argTypes }) => ({
     }
   }
 })
+仅显示最后一级.parameters = {
+  docs: {
+    description: {
+      story: '可以仅在输入框中显示选中项最后一级的标签，而不是选中项所在的完整路径。'
+    }
+  }
+}
 
-export const 多选 = (args, { argTypes }) => ({
+export const 多选 = () => ({
   template: `
   <div>
     <div class="block">
@@ -1285,8 +1318,15 @@ export const 多选 = (args, { argTypes }) => ({
     }
   }
 })
+多选.parameters = {
+  docs: {
+    description: {
+      story: '可通过 props.multiple = true 来开启多选模式'
+    }
+  }
+}
 
-export const 选择任意一级选项 = (args, { argTypes }) => ({
+export const 选择任意一级选项 = () => ({
   template: `
   <div>
     <div class="block">
@@ -1578,8 +1618,15 @@ export const 选择任意一级选项 = (args, { argTypes }) => ({
     }
   }
 })
+选择任意一级选项.parameters = {
+  docs: {
+    description: {
+      story: '在单选模式下，你只能选择叶子节点；而在多选模式下，勾选父节点真正选中的都是叶子节点。启用该功能后，可让父子节点取消关联，选择任意一级选项。'
+    }
+  }
+}
 
-export const 动态加载 = (args, { argTypes }) => ({
+export const 动态加载 = () => ({
   template: `<el-cascader :props="props"></el-cascader>`,
   data() {
     let id = 0
@@ -1602,8 +1649,15 @@ export const 动态加载 = (args, { argTypes }) => ({
     }
   }
 })
+动态加载.parameters = {
+  docs: {
+    description: {
+      story: '当选中某一级时，动态加载该级下的选项。'
+    }
+  }
+}
 
-export const 可搜索 = (args, { argTypes }) => ({
+export const 可搜索 = () => ({
   template: `
   <div>
     <div class="block">
@@ -1896,8 +1950,15 @@ export const 可搜索 = (args, { argTypes }) => ({
     }
   }
 })
+可搜索.parameters = {
+  docs: {
+    description: {
+      story: '可以快捷地搜索选项并选择。'
+    }
+  }
+}
 
-export const 自定义节点内容 = (args, { argTypes }) => ({
+export const 自定义节点内容 = () => ({
   template: `
   <el-cascader :options="options">
     <template slot-scope="{ node, data }">
@@ -2179,8 +2240,15 @@ export const 自定义节点内容 = (args, { argTypes }) => ({
     }
   }
 })
+自定义节点内容.parameters = {
+  docs: {
+    description: {
+      story: '可以自定义备选项的节点内容'
+    }
+  }
+}
 
-export const 级联面板 = (args, { argTypes }) => ({
+export const 级联面板 = () => ({
   template: `<el-cascader-panel :options="options"></el-cascader-panel>`,
   data() {
     return {
@@ -2455,3 +2523,10 @@ export const 级联面板 = (args, { argTypes }) => ({
     }
   }
 })
+级联面板.parameters = {
+  docs: {
+    description: {
+      story: '级联面板是级联选择器的核心组件，与级联选择器一样，有单选、多选、动态加载等多种功能。'
+    }
+  }
+}

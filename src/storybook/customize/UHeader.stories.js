@@ -4,9 +4,17 @@ export default {
   title: 'Customize/UHeader',
   component: UHeader,
   argTypes: {
-    title: { description: '标题' },
-    description: { description: '描述信息' },
-    actions: { description: '操作区域' }
+    title: {
+      control: 'text',
+      description: '标题'
+    }
+  },
+  parameters: {
+    docs: {
+      description: {
+        component: '设置头部通用栏'
+      }
+    }
   }
 }
 
@@ -25,7 +33,7 @@ const Template = (args, { argTypes }) => ({
   `
 })
 
-export const Attitudes = Template.bind({})
-Attitudes.args = {
+export const 基础用法 = Template.bind({})
+基础用法.args = {
   title: 'Ulearning'
 }

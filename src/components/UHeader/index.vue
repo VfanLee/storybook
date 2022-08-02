@@ -13,7 +13,11 @@
 <script>
 export default {
   name: 'UHeader',
-  props: ['title']
+  props: {
+    title: {
+      type: String
+    }
+  }
 }
 </script>
 

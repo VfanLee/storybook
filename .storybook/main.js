@@ -7,9 +7,9 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
-    '@storybook/preset-scss',
-    '@storybook/addon-a11y',
-    'storybook-dark-mode'
+    '@storybook/preset-scss', // 集成 sass
+    '@storybook/addon-a11y', // 可访问性
+    'storybook-dark-mode', // 明暗模式
   ],
   framework: '@storybook/vue'
 }
