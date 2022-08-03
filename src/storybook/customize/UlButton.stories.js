@@ -15,7 +15,7 @@ export default {
       description: '尺寸'
     },
     click: {
-      description: '自定义点击事件',
+      description: '自定义点击事件'
     },
     default: {
       description: '默认插槽，用于定义按钮内容'
@@ -23,12 +23,11 @@ export default {
   }
 }
 
-const Template = (args, { argTypes }) => ({
+export const Attitudes = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { UlButton },
   template: '<ul-button v-bind="$props">Button</ul-button>'
 })
-export const Attributes = Template.bind({})
 
 export const 预定样式 = () => ({
   components: { UlButton },

@@ -63,7 +63,9 @@ export default {
   }
 }
 
-export const Attributes = () => ({})
+export const Attributes = () => ({
+  template: ''
+})
 
 export const 基础用法 = () => ({
   template: `
