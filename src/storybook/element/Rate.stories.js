@@ -143,29 +143,29 @@ export const 辅助文字 = () => ({
   }
 }
 
-export const 其它icon = () => ({
-  template: `
-  <el-rate
-    v-model="value"
-    :icon-classes="iconClasses"
-    void-icon-class="icon-rate-face-off"
-    :colors="['#99A9BF', '#F7BA2A', '#FF9900']">
-  </el-rate>
-  `,
-  data() {
-    return {
-      value: null,
-      iconClasses: ['icon-rate-face-1', 'icon-rate-face-2', 'icon-rate-face-3'] // 等同于 { 2: 'icon-rate-face-1', 4: { value: 'icon-rate-face-2', excluded: true }, 5: 'icon-rate-face-3' }
-    }
-  }
-})
-其它icon.parameters = {
-  docs: {
-    description: {
-      story: '当有多层评价时，可以用不同类型的 icon 区分评分层级'
-    }
-  }
-}
+// export const 其它icon = () => ({
+//   template: `
+//   <el-rate
+//     v-model="value"
+//     :icon-classes="iconClasses"
+//     void-icon-class="icon-rate-face-off"
+//     :colors="['#99A9BF', '#F7BA2A', '#FF9900']">
+//   </el-rate>
+//   `,
+//   data() {
+//     return {
+//       value: null,
+//       iconClasses: ['icon-rate-face-1', 'icon-rate-face-2', 'icon-rate-face-3'] // 等同于 { 2: 'icon-rate-face-1', 4: { value: 'icon-rate-face-2', excluded: true }, 5: 'icon-rate-face-3' }
+//     }
+//   }
+// })
+// 其它icon.parameters = {
+//   docs: {
+//     description: {
+//       story: '当有多层评价时，可以用不同类型的 icon 区分评分层级'
+//     }
+//   }
+// }
 
 export const 只读 = () => ({
   template: `

@@ -13,6 +13,12 @@ export default {
       control: 'radio',
       options: ['large', 'small', 'mini'],
       description: '尺寸'
+    },
+    click: {
+      description: '自定义点击事件',
+    },
+    default: {
+      description: '默认插槽，用于定义按钮内容'
     }
   }
 }

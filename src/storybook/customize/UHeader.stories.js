@@ -7,6 +7,12 @@ export default {
     title: {
       control: 'text',
       description: '标题'
+    },
+    description: {
+      description: '描述插槽'
+    },
+    actions: {
+      description: '操作插槽'
     }
   },
   parameters: {
@@ -18,7 +24,7 @@ export default {
   }
 }
 
-const Template = (args, { argTypes }) => ({
+export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { UHeader },
   template: `
@@ -32,8 +38,6 @@ const Template = (args, { argTypes }) => ({
   </u-header>
   `
 })
-
-export const 基础用法 = Template.bind({})
-基础用法.args = {
+Template.args = {
   title: 'Ulearning'
 }
